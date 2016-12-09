@@ -46,9 +46,9 @@ latex_jinja_env = jinja2.Environment(
 	line_comment_prefix = '%#',
 	trim_blocks = True,
 	autoescape = False,
-	loader = jinja2.FileSystemLoader(os.path.abspath('.'))
+	loader = jinja2.FileSystemLoader(os.path.abspath('/'))
 )
-template = latex_jinja_env.get_template(template_file)
+template = latex_jinja_env.get_template(os.path.realpath(template_file))
 ######
 
 renderer_template = template.render(**options)
