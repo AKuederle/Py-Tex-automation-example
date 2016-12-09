@@ -2,11 +2,21 @@ import re
 import os
 import shutil
 
+import argparse
+
+
+parser = argparse.ArgumentParser(description='Render a LaTex Template with variables.')
+
+parser.add_argument('-i','--in', help='Input File', required=False, default='./example.txt' )
+parser.add_argument('-t','--template', help='Template File', required=False, default='./template.tex')
+args = vars(parser.parse_args())
+
+
 project = "./"
-in_file = "{}example.txt".format(project)
+in_file = args['in']
 build_d = "{}.build/".format(project)
+template_file = args['template']
 out_file = "{}renderer_template".format(build_d)
-template = "test"
 
 
 current_object = None
@@ -38,7 +48,7 @@ latex_jinja_env = jinja2.Environment(
 	autoescape = False,
 	loader = jinja2.FileSystemLoader(os.path.abspath('.'))
 )
-template = latex_jinja_env.get_template('template.tex')
+template = latex_jinja_env.get_template(template_file)
 ######
 
 renderer_template = template.render(**options)
