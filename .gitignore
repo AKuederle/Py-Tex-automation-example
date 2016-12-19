@@ -1,19 +1,6 @@
-Skip to content
-This repository  
-Explore
-Gist
-Blog
-Help
-@AKuederle AKuederle
- 
- Watch 1,130
-  Star 24,553
-  Fork 8,995
-github/gitignore
- branch: master  gitignore/TeX.gitignore
-@arcresuarcresu on Mar 1 Merge pull request #1411 from ptigwe/master
-12 contributors @maieul @arcresu @tjgrilley @lighght @ptigwe @masgo @izuzak @Gurmeet-Singh @habi @edelbluth @wojciechwasko @adamliter
-RawBlameHistory     127 lines (102 sloc)  1.247 kb
+## Python
+
+__pycache__
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -140,5 +127,3 @@ sympy-plots-for-*.tex/
 # WinEdt
 *.bak
 *.sav
-Status API Training Shop Blog About
-© 2015 GitHub, Inc. Terms Privacy Security Contact
