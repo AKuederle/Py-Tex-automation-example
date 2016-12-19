@@ -1,0 +1,15 @@
+\documentclass[12pt,a4paper]{article} % din a4, 11 pt schrift, einseitig,
+
+\begin{document}
+\section{Product List by Category}
+\BLOCK{ for key, value in products | dictsort}
+\subsection{Category \VAR{key}}
+\begin{tabular}[c]{ll}
+    Index & Name \\
+    \hline
+    \BLOCK{ for inner_key, inner_value in value | dictsort}
+        \VAR{inner_key}& \VAR{inner_value['Name']}\\
+    \BLOCK{ endfor }
+\end{tabular}
+\BLOCK{ endfor }
+\end{document}
