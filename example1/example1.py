@@ -1,9 +1,10 @@
 import pandas as pd
 import utils
 
-product_data = pd.read_excel('./test_data.xls')
+product_data = pd.read_excel('./test_data.xls', index_col='Index')
 
 categories = product_data['Category'].unique()
+
 nested_product_list = {k:product_data[product_data['Category']==k].T.to_dict() for k in categories}
 
 template = utils.get_template('./example1_template.tex')
